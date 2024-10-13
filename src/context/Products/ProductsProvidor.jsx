@@ -28,7 +28,6 @@ const ProductsProvider = ({ children }) => {
     api
       .get(`/product`)
       .then(res => {
-        console.log('Products fetched:', res.data)
         setProducts(res.data)
       })
       .catch(error => {
