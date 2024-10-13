@@ -1,22 +1,15 @@
-import { useState } from 'react'
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-  Spinner,
-} from '@material-tailwind/react'
-import { Rating, ThinStar } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
-import { CiShoppingCart } from 'react-icons/ci'
-import { useCart } from '../../context/cart/CartContext'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Rating, ThinStar } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { CiShoppingCart } from "react-icons/ci";
+import { useCart } from "../../context/cart/CartContext";
 // rating styles
 const myStyles = {
   itemShapes: ThinStar,
-  activeFillColor: '#ffb700',
-  inactiveFillColor: '#fbf1a9',
-}
+  activeFillColor: "#fdac3b",
+  inactiveFillColor: "#bcc4cd",
+};
 const ProductCard = ({
   _id,
   title,
@@ -26,11 +19,46 @@ const ProductCard = ({
   image,
   stock,
 }) => {
-  const [starRating, setStarRating] = useState(Math.round(rating.rate))
-  const { addItemsToCart, cartLoading } = useCart()
+  
+  const { addItemsToCart, cartLoading } = useCart();
 
   return (
-    <Card className='flex  justify-between  border-none shadow-xl cursor-pointer  hover:scale-105 transition-all group hover:shadow-2xl'>
+    <Link to={`/products/${_id}`}>
+      <div className="flex flex-col border border-gray-300 dark:border-gray-800 min-w-60 hover:scale-105  transition duration-700 ease-in-out gap-6 py-3 justify-between items-center pt-5">
+        <div className="flex flex-col gap-4 w-full items-center">
+          <img
+            src={image}
+            loading="lazy"
+            className="max-w-48 h-72 rounded object-contain"
+          />
+          <div className="flex flex-col px-3 gap-1 w-full">
+            <span className="text-md ">{title?.slice(0, 20)}</span>
+            <span className="text-md font-medium">${price}</span>
+          </div>
+          {/* <span className="text-sm font-light">{description?.slice(0, 60)}</span> */}
+
+          {/* <div className="w-full flex gap-2 justify-center">
+        <Rating
+          itemStyles={myStyles}
+          style={{ maxWidth: 80 }}
+          value={starRating}
+          readOnly
+        />
+        <span className="text-xs">({rating.rate})</span>
+      </div> */}
+        </div>
+        {/* <Button className="bg-gray-800 text-sm flex justify-center items-center text-white w-full h-12 rounded-sm">
+      Add to Cart
+    </Button> */}
+      </div>
+    </Link>
+  );
+};
+
+export default ProductCard;
+
+{
+  /* <Card className='flex  justify-between  border-none shadow-xl cursor-pointer  hover:scale-105 transition-all group hover:shadow-2xl'>
       <CardHeader
         color='transparent'
         className='relative border-none shadow-none'
@@ -92,8 +120,5 @@ const ProductCard = ({
           </Typography>
         </div>
       </CardBody>
-    </Card>
-  )
+    </Card> */
 }
-
-export default ProductCard

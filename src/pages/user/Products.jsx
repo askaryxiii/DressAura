@@ -1,26 +1,38 @@
-import { useEffect } from 'react'
-import ProductCard from '../../components/user/ProductCard'
-import { useProducts } from '../../context/Products/ProductsContext'
-import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader'
-import FilteredCategories from '../../components/user/FilteredCategories'
-import UpArrow from '../../components/user/UpArrow'
+import { useEffect } from "react";
+import ProductCard from "../../components/user/ProductCard";
+import { useProducts } from "../../context/Products/ProductsContext";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import FilteredCategories from "../../components/user/FilteredCategories";
+import UpArrow from "../../components/user/UpArrow";
+import {
+  Button,
+  IconButton,
+  Rating,
+  Typography,
+} from "@material-tailwind/react";
+import { FaHeart } from "react-icons/fa";
 
 const Products = () => {
-  const { getAllProducts, productInfoLoading, filteredProducts } = useProducts()
+  const { getAllProducts, productInfoLoading, filteredProducts } =
+    useProducts();
   useEffect(() => {
-    getAllProducts()
-  }, [])
+    getAllProducts();
+  }, []);
+
   return (
     <>
       {productInfoLoading ? (
-        <div className='h-[90vh] flex items-center justify-center '>
-          <ClimbingBoxLoader color='#303b53' size={26} />
+        <div className="h-[90vh] flex items-center justify-center ">
+          <ClimbingBoxLoader color="#303b53" size={26} />
         </div>
       ) : (
         <div>
-          <div className='flex min-h-screen justify-center'>
+          <div className="flex lg:flex-row flex-col min-h-screen lg:justify-between ">
             <FilteredCategories />
-            <div className='grid grid-cols-1 sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-8  lg:gap-16 xl:gap-24 lg:mx-16 mx-4 my-16 h-fit'>
+            <div className="grid grid-cols-1 sm:grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-12  lg:gap-3 xl:gap-8 lg:mx-16 mx-8 my-16 h-fit">
+              <span className="text-3xl text-gray-800 dark:text-white font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-4">
+                All <span className="font-medium">Collections ─── </span>
+              </span>
               {filteredProducts.map(
                 (
                   { _id, title, description, price, rating, image, stock },
@@ -44,7 +56,7 @@ const Products = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

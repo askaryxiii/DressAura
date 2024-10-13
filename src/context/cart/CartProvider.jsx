@@ -34,7 +34,7 @@ const CartProvider = ({ children }) => {
         )
         setCartItems(cartItemsMapping)
         setTotalAmount(res.data.totalAmount)
-        console.log(res)
+ 
       })
       .catch(err => console.error(err))
       .finally(() => setCartPageLoading(false))
