@@ -5,7 +5,7 @@ import "@smastrom/react-rating/style.css";
 const ProductCard = ({ _id, title, price, image }) => {
   return (
     <Link to={`/products/${_id}`}>
-      <div className="flex flex-col  shadow-sm bg-white border-none dark:border-gray-800 min-w-60 hover:scale-105  transition duration-700 ease-in-out gap-6 py-3 justify-between items-center pt-5">
+      <div className="flex flex-col  shadow-sm bg-white dark:bg-gray-800 border-none dark:border-gray-800 min-w-60 hover:scale-105  transition duration-700 ease-in-out gap-6 py-3 justify-between items-center pt-5">
         <div className="flex flex-col gap-4 w-full items-center">
           <img
             src={image}
