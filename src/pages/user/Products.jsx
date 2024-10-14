@@ -26,7 +26,7 @@ const Products = () => {
               <span className="text-3xl text-gray-800 dark:text-white font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-3">
                 All <span className="font-medium">Collections ─── </span>
               </span>
-              {filteredProducts.map(
+              {filteredProducts?.map(
                 (
                   { _id, title, description, price, rating, image, stock },
                   index
