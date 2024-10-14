@@ -5,17 +5,19 @@ import Products from "./pages/user/Products";
 import LogIn from "./pages/user/LogIn";
 import SignUp from "./pages/user/SignUp";
 import NotFound from "./pages/user/NotFound";
-import BlindingBar from "./components/user/BlindingBar";
+// import BlindingBar from "./components/user/BlindingBar";
 import Cart from "./pages/user/Cart";
 import Footer from "./components/user/Footer";
 import CheckOut from "./pages/user/CheckOut";
 import Profile from "./pages/user/Profile";
 import { SingleProduct } from "./pages/user/SingleProduct";
+import About from "./pages/user/About";
+import ContactUs from "./pages/user/ContactUs";
 
 const UserLayout = () => {
   return (
     <div>
-      <BlindingBar />
+      {/* <BlindingBar /> */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +28,8 @@ const UserLayout = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/About" element={<About/>}/>
+        <Route path="/ContactUs" element={<ContactUs/>}/>
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

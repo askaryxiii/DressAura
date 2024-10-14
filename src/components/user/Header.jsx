@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import {
   Navbar,
-  Typography,
   IconButton,
   Collapse,
 } from '@material-tailwind/react'
 import NavList from './NavList'
+import { Link } from 'react-router-dom'
+import logo from "../../../public/img/logo(2).png";
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false)
@@ -18,21 +19,23 @@ const Header = () => {
   }, [])
 
   return (
-    <Navbar className='sticky top-0 z-50 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-gray-200 border-none'>
-      <div className=' flex items-center justify-evenly text-black font-bold text-2xl'>
+    <Navbar className='sticky top-0 z-50  max-w-full rounded-none  py-1 lg:px-8  border-none'>
+      <div className=' flex items-center justify-between text-black font-bold text-xl px-4 '>
         {/* logo */}
-        <div>
-          <Typography
-            as='a'
-            href='/'
-            className='mr-4 cursor-pointer py-1.5 font-medium'
+        <div className='flex justify-center'> 
+          <Link
+            to='/'
+            className='mr-4 cursor-pointer '
           >
-            <img src='/img/logo.png' />
-          </Typography>
+            <img
+            className=" w-44 object-cover object-center "
+            src={logo}
+          />
+          </Link>
         </div>
         {/* other nav items  */}
-        <div className='flex items-center lg:w-2/3'>
-          <div className='hidden lg:flex w-full'>
+        <div className='flex  items-center lg:w-2/3'>
+          <div className='hidden  lg:flex w-full'>
             <NavList />
           </div>
 
