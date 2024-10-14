@@ -16,6 +16,6 @@ createRoot(document.getElementById('root')).render(
           </ThemeProvider>
         </CartProvider>
       </ProductsProvider>
-    </AuthProvider>{' '}
+    </AuthProvider>
   </BrowserRouter>
 )

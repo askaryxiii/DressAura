@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/user/Header";
 import Home from "./pages/user/Home";
 import Products from "./pages/user/Products";
@@ -11,8 +11,14 @@ import Footer from "./components/user/Footer";
 import CheckOut from "./pages/user/CheckOut";
 import Profile from "./pages/user/Profile";
 import { SingleProduct } from "./pages/user/SingleProduct";
+import { useLayoutEffect } from "react";
 
 const UserLayout = () => {
+  const location = useLocation();
+  // Scroll to top if path changes
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <div>
       <BlindingBar />
