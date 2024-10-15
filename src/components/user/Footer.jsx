@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 const LINKS = [
   {
     items: ["Home"],
-    to:"/"
+    to: "/",
   },
   {
     items: ["Categories"],
-    to:"/products"
+    to: "/products",
   },
   {
     items: ["About us"],
-   to:"/About"
+    to: "/About",
   },
   {
     items: ["Contact Us"],
-    to:"/ContactUS"
+    to: "/ContactUS",
   },
 ];
 
@@ -29,23 +29,19 @@ const Footer = () => {
       <div className="flex flex-wrap items-center  md:justify-around py-4">
         {/* Logo */}
         <div className="w-56 mx-auto">
-          <img
-            className=" w-full object-cover object-center "
-            src={logo}
-          />
+          <img className=" w-full object-cover object-center " src={logo} />
         </div>
 
         {/* lists */}
         <div className="flex  justify-between gap-16 mx-auto ">
-          {LINKS.map(({items,to }) => (
-            <ul >
-              {items.map((link) => (
-                <li>
+          {LINKS?.map(({ items, to }, index) => (
+            <ul key={index}>
+              {items?.map((link, secIndex) => (
+                <li key={secIndex}>
                   <Link
                     to={`${to}`}
                     color="gray"
-                    className="font-medium text-md transition-colors hover:text-black"
-                  >
+                    className="font-medium text-md transition-colors hover:text-black">
                     {link}
                   </Link>
                 </li>
@@ -58,7 +54,7 @@ const Footer = () => {
         {/* copyRight */}
         <div className="border-t-2">
           <Typography color="gray" className="text-center font-normal ">
-          &copy; {currentYear}{" "} E-Commerce
+            &copy; {currentYear} E-Commerce
           </Typography>
         </div>
       </div>
