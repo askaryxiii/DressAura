@@ -13,6 +13,7 @@ import {
 } from "@material-tailwind/react";
 import HelperText from "../../components/user/HelperText";
 import { useAuth } from "../../context/Auth/AuthContext";
+import {bgSignUp} from '../../../tailwind.config'
 
 const SignUp = () => {
   // states
