@@ -4,13 +4,6 @@ import { useProducts } from "../../context/Products/ProductsContext";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import FilteredCategories from "../../components/user/FilteredCategories";
 import UpArrow from "../../components/user/UpArrow";
-import {
-  Button,
-  IconButton,
-  Rating,
-  Typography,
-} from "@material-tailwind/react";
-import { FaHeart } from "react-icons/fa";
 
 const Products = () => {
   const { getAllProducts, productInfoLoading, filteredProducts } =
@@ -27,13 +20,13 @@ const Products = () => {
         </div>
       ) : (
         <div>
-          <div className="flex lg:flex-row flex-col min-h-screen lg:justify-between ">
+          <div className="flex lg:flex-row flex-col min-h-screen bg-[#fcfcfc] dark:bg-[#393939]">
             <FilteredCategories />
-            <div className="grid grid-cols-1 sm:grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-12  lg:gap-3 xl:gap-8 lg:mx-16 mx-8 my-16 h-fit">
-              <span className="text-3xl text-gray-800 dark:text-white font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-3 xl:gap-8 lg:mx-16 mx-8 my-16 h-fit">
+              <span className="text-3xl text-gray-800 dark:text-white font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-3">
                 All <span className="font-medium">Collections ─── </span>
               </span>
-              {filteredProducts.map(
+              {filteredProducts?.map(
                 (
                   { _id, title, description, price, rating, image, stock },
                   index

@@ -27,7 +27,7 @@ const App = () => {
     <div
       className={`${
         theme === 'dark'
-          ? 'bg-blue-gray-900 text-white dark'
+          ? 'dark:bg-[#393939] text-white dark'
           : 'bg-white text-black'
       } min-h-screen`}
     >
