@@ -25,9 +25,10 @@ const App = () => {
     <div
       className={`${
         theme === "dark"
-          ? "dark:bg-[#1e1e1e] text-white dark"
+          ? "dark:bg-gray-900 text-white dark"
           : "bg-white text-black"
-      } min-h-screen`}>
+      } min-h-screen`}
+    >
       <Routes>
         <Route path="/*" element={<UserLayout />} />
 

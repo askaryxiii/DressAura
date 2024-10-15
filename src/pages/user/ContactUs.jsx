@@ -6,9 +6,9 @@ import contactUs from "../../../public/img/ContactUs.jpg"
 
 const ContactUs = () => {
   return (
-    <section className="px-8 py-8 lg:py-16  mb-5">
+    <section className="px-8 py-8 lg:py-16  mb-5  ">
       {/* the top Side */}
-    <div className="container mx-auto text-center">
+    <div className="container mx-auto text-center ">
       <Typography
         variant="h5"
         color="blue-gray"
@@ -79,7 +79,7 @@ const ContactUs = () => {
             <div>
               <Typography
                 variant="small"
-                className="mb-2 text-left font-medium !text-gray-900"
+                className="mb-2 text-left font-medium !text-gray-900 "
               >
                 Last Name
               </Typography>
