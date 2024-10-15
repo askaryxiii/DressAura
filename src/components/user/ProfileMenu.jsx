@@ -62,8 +62,7 @@ const ProfileMenu = () => {
               <Typography
                 as='span'
                 variant='small'
-                className='font-normal '
-                color={'teal'}
+                className='font-normal hover:text-gray-900'
               >
                 Admin Dashboard
               </Typography>

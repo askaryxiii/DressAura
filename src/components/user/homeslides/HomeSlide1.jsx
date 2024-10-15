@@ -1,42 +1,43 @@
-import { Typography, Button } from '@material-tailwind/react'
-import { FaLongArrowAltRight } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Typography, Button } from "@material-tailwind/react";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const HomeSlide1 = () => {
   return (
-    <div className='bg-hero-1 h-screen xl:bg-cover bg-custom-size relative bg-black flex'>
+    <div className="h-screen relative flex w-full ">
       {/* overlay */}
-      <div className='absolute inset-0 bg-black/10 dark:bg-black/60 z-10'></div>
-      <div className='relative max-w-screen-md h-full flex flex-col justify-center pl-12 gap-4 items-start lg:w-1/3 z-20'>
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-blue-gray-50   z-10 "></div>
+      <div className="relative max-w-screen-sm flex flex-col justify-center  pl-12 gap-4 items-start z-20">
         <Typography
-          variant='h5'
-          className='mb-2 text-md md:text-2xl text-red-400 uppercase'
+          variant="h5"
+          className="mb-2 text-md md:text-4xl text-[#530307]  uppercase"
         >
-          summer collection
+          All collection
         </Typography>
         <Typography
-          variant='h2'
-          className='mb-2 text-blue-gray-800 text-xl md:text-4xl dark:text-gray-300'
+          variant="h2"
+          className="mb-2 text-blue-gray-900 text-xl md:text-4xl dark:text-gray-400"
         >
-          Fall - Winter Collection 2024
+          summer- Fall - Winter Collection 2024
         </Typography>
         <Typography
-          variant='h5'
-          className='mb-2 text-gray-600 text-md md:text-lg dark:text-gray-400'
+          variant="h5"
+          className="mb-2 text-gray-600 text-md md:text-lg dark:text-gray-400  text-wrap"
         >
           A Specialist Label creating luxury essentials.Ethically crafted with
           an unwavering commitment to exceptional quality.
         </Typography>
-        <Link to={'/products'}>
+        <Link to={"/products"} className="mt-4">
           <Button
-            color='red'
-            className='flex text-sm  xl:gap-4 xl:text-xl items-center w-max '
+            variant="gradient"
+            className="flex text-sm  xl:gap-4 xl:text-md items-center text-center "
           >
             Shop Now <FaLongArrowAltRight />
           </Button>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeSlide1
+export default HomeSlide1;
