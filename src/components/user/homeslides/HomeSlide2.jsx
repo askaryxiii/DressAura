@@ -9,6 +9,7 @@ const HomeSlide2 = () => {
     getAllProducts();
   }, []);
   return (
+
     <div className="flex flex-col justify-center items-center gap-2 py-20 dark:bg-gray-400">
       <div className="flex flex-col items-center gap-4 w-1/2">
         <span className="text-5xl text-gray-800 dark:text-white font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
@@ -19,6 +20,7 @@ const HomeSlide2 = () => {
           and kids. From chic women's dresses, versatile men's casual and formal
           wear, to fun and comfortable outfits for kids.
         </span>
+
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-3 xl:gap-8 lg:mx-16 mx-auto my-16 h-fit">
         {products?.map(

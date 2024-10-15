@@ -25,7 +25,7 @@ const App = () => {
     <div
       className={`${
         theme === "dark"
-          ? "dark:bg-[#393939] text-white dark"
+          ? "dark:bg-[#1e1e1e] text-white dark"
           : "bg-white text-black"
       } min-h-screen`}>
       <Routes>
