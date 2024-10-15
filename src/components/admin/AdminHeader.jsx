@@ -12,7 +12,7 @@ const AdminHeader = () => {
           href='/'
           className='cursor-pointer py-1.5 font-medium'
         >
-          <img src={logo}  className=" w-36 object-cover object-center  "/>
+          <img src={logo}  className=" w-28 object-cover object-center  "/>
         </Typography>
 
         <Typography

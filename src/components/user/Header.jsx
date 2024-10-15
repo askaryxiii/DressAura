@@ -20,7 +20,7 @@ const Header = () => {
         {/* logo */}
         <div className="flex justify-center">
           <Link to="/" className="mr-4 cursor-pointer ">
-            <img className=" w-36 object-cover object-center  " src={logo} />
+            <img className=" w-28 object-cover object-center  " src={logo} />
           </Link>
         </div>
         {/* other nav items  */}
