@@ -1,62 +1,69 @@
-import { Typography } from '@material-tailwind/react'
+import { Typography } from "@material-tailwind/react";
+import logo from "../../../public/img/logo(2).png";
+import { Link } from "react-router-dom";
+
+const LINKS = [
+  {
+    items: ["Home"],
+    to:"/"
+  },
+  {
+    items: ["Categories"],
+    to:"/products"
+  },
+  {
+    items: ["About us"],
+   to:"/About"
+  },
+  {
+    items: ["Contact Us"],
+    to:"/ContactUS"
+  },
+];
+
+const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className='w-full bg-black p-8 dark:border border-gray-400'>
-      <div className='flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12  text-center md:justify-between'>
-        <img src='/img/footer-logo.png' alt='logo-ct' className='w-22' />
-        <ul className='flex flex-wrap items-center gap-y-2 gap-x-8'>
-          <li>
-            <Typography
-              as='a'
-              href='#'
-              color='white'
-              className='font-normal transition-colors hover:text-blue-500 focus:text-blue-500'
-            >
-              About Us
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as='a'
-              href='#'
-              color='white'
-              className='font-normal transition-colors hover:text-blue-500 focus:text-blue-500'
-            >
-              License
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as='a'
-              href='#'
-              color='white'
-              className='font-normal transition-colors hover:text-blue-500 focus:text-blue-500'
-            >
-              Contribute
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as='a'
-              href='#'
-              color='white'
-              className='font-normal transition-colors hover:text-blue-500 focus:text-blue-500'
-            >
-              Contact Us
-            </Typography>
-          </li>
-        </ul>
-      </div>
-      <div className='flex justify-center my-2'>
-        <img src='/img/payment.png' />
-      </div>
-      <hr className='my-8 border-blue-gray-50' />
-      <Typography color='gray' className='text-center font-normal'>
-        &copy; 2024 E-Commerce
-      </Typography>
-    </footer>
-  )
-}
+    <footer className="relatve w-full mb-0 px-4 flex text-center border-t-2 flex-col">
+      <div className="flex flex-wrap items-center  md:justify-around py-4">
+        {/* Logo */}
+        <div className="w-56 mx-auto">
+          <img
+            className=" w-full object-cover object-center "
+            src={logo}
+          />
+        </div>
 
-export default Footer
+        {/* lists */}
+        <div className="flex  justify-between gap-16 mx-auto ">
+          {LINKS.map(({items,to }) => (
+            <ul >
+              {items.map((link) => (
+                <li>
+                  <Link
+                    to={`${to}`}
+                    color="gray"
+                    className="font-medium text-md transition-colors hover:text-black"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
+      <div>
+        {/* copyRight */}
+        <div className="border-t-2">
+          <Typography color="gray" className="text-center font-normal ">
+          &copy; {currentYear}{" "} E-Commerce
+          </Typography>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

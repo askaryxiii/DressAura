@@ -11,6 +11,7 @@ import {
 } from '@material-tailwind/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useAuth } from '../../context/Auth/AuthContext'
+import { BsPersonCircle } from "react-icons/bs"
 
 const ProfileMenu = () => {
   const { userData, logout } = useAuth()
@@ -29,13 +30,10 @@ const ProfileMenu = () => {
       <MenuHandler>
         <Button
           variant='text'
-          color='blue-gray'
+          color='gray'
           className='flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto'
         >
-          <Typography className='hidden lg:block'>
-            {userData?.email || ''}
-          </Typography>
-          <Avatar
+          {/* <Avatar
             variant='circular'
             size='sm'
             alt={userData?.email || ''}
@@ -44,7 +42,8 @@ const ProfileMenu = () => {
               userData?.image ||
               'https://img.freepik.com/free-vector/man-red-shirt-with-white-collar_90220-2873.jpg?t=st=1725674282~exp=1725677882~hmac=f7bfca7602c44905f50116f08558e9b0094faedd3715e037043065702980835b&w=740'
             }
-          />
+          /> */}
+            <BsPersonCircle  className="text-3xl "/>
           <ChevronDownIcon
             strokeWidth={2.5}
             className={`h-3 w-3 transition-transform ${

@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 const HomeSlide1 = () => {
   return (
-    <div className='bg-hero-1 h-screen xl:bg-cover bg-custom-size relative'>
+    <div className='bg-hero-1 h-screen xl:bg-cover bg-custom-size relative bg-black flex'>
       {/* overlay */}
       <div className='absolute inset-0 bg-black/10 dark:bg-black/60 z-10'></div>
       <div className='relative max-w-screen-md h-full flex flex-col justify-center pl-12 gap-4 items-start lg:w-1/3 z-20'>
