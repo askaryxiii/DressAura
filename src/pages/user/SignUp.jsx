@@ -13,7 +13,6 @@ import {
 } from "@material-tailwind/react";
 import HelperText from "../../components/user/HelperText";
 import { useAuth } from "../../context/Auth/AuthContext";
-import {bgSignUp} from '../../../tailwind.config'
 
 const SignUp = () => {
   // states
@@ -68,16 +67,14 @@ const SignUp = () => {
     <div className="flex justify-center bg-bgSignUp bg-cover">
       <Card
         shadow={false}
-        className="flex items-center  text-black dark:black dark:bg-gray-200  my-10 py-10 px-4"
-      >
+        className="flex items-center  text-black dark:black dark:bg-gray-200  my-10 py-10 px-4">
         <Typography variant="h4">Sign Up</Typography>
         <Typography color={"gray"} className="mt-1 font-normal">
           Nice to meet you! Enter your details to register.
         </Typography>
         <form
           className="mt-6 mb-6 mx-5  flex flex-col gap-4"
-          onSubmit={submitHandler}
-        >
+          onSubmit={submitHandler}>
           <div>
             <h3 className="text-center text-red-900">{errorMsg}</h3>
           </div>
@@ -146,8 +143,7 @@ const SignUp = () => {
                     ...userInfo,
                     gender: val,
                   })
-                }
-              >
+                }>
                 <Option selected value="male">
                   Male
                 </Option>
@@ -194,19 +190,16 @@ const SignUp = () => {
             className="mt-2 text-md font-normal bg-gray-900 hover:bg-black transition-all py-2  mx-auto"
             fullWidth
             type="submit"
-            disabled={loading}
-          >
+            disabled={loading}>
             {loading ? <Spinner color="amber" /> : "Sign Up"}
           </Button>
           <Typography
             className="mt-1 text-center font-normal"
-            color={colorTheme}
-          >
+            color={colorTheme}>
             Already have an account?
             <Link
               to={"/login"}
-              className="font-medium text-gray-700   hover:text-black text-md ml-2 transition-all"
-            >
+              className="font-medium text-gray-700   hover:text-black text-md ml-2 transition-all">
               Sign In
             </Link>
           </Typography>
