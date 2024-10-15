@@ -2,7 +2,7 @@ import { Typography, Button } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
 const HomeSlide2 = () => {
   return (
-    <div className='xl:h-[1000px] relative flex flex-col justify-center items-center gap-2 py-2 dark:bg-gray-400'>
+    <div className='xl:h-[1000px] relative flex flex-col justify-center items-center gap-2 py-2 dark:bg-[#1e1e1e]'>
       <div className=' xl:absolute top-12 right-40 '>
         <img src='/img/banner/banner-1.jpg' className='rounded-lg shadow' />
       </div>

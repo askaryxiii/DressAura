@@ -25,11 +25,13 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="relatve w-full mb-0 px-4 flex text-center border-t-2 flex-col">
+    <footer className="relatve w-full mb-0 px-4 flex text-center border-t-2 flex-col dark:bg-[#d2d2d2]">
       <div className="flex flex-wrap items-center  md:justify-around py-4">
         {/* Logo */}
         <div className="w-44 mx-auto">
-          <img className=" w-full object-cover object-center " src={logo} />
+          <img className=" w-full object-cover object-center "
+           src={logo} 
+           />
         </div>
 
         {/* lists */}

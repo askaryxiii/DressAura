@@ -4,15 +4,15 @@ import DarkMode from '../user/DarkMode'
 import logo from "../../../src/image/exlogo.png" ;
 const AdminHeader = () => {
   return (
-    <Navbar className='sticky top-0 z-20  max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-2 bg-gray-200 border-none shadow-2xl '>
+    <Navbar className='sticky top-0 z-20  max-w-full rounded-none px-4 py-0 lg:px-8 lg:py-0  bg-gray-200 border-none shadow-2xl '>
       <div className='flex justify-between items-center mx-14'>
         {/* logo */}
         <Typography
           as='a'
           href='/'
-          className='cursor-pointer py-1.5 font-medium'
+          className='cursor-pointer py-1 font-medium'
         >
-          <img src={logo}  className=" w-36 object-cover object-center  "/>
+          <img src={logo}  className=" w-32 object-cover object-center  "/>
         </Typography>
 
         <Typography
