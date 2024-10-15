@@ -64,7 +64,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-center bg-bgSignUp  bg-cover">
+    <div className="flex justify-center bg-bgSignUp bg-cover">
       <Card
         shadow={false}
         className="flex items-center  text-black dark:black dark:bg-gray-200  my-10 py-10 px-4"

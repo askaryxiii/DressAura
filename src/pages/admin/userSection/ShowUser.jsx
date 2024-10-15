@@ -5,99 +5,123 @@ import {
   CardBody,
   CardFooter,
   Avatar,
-} from '@material-tailwind/react'
-import { useEffect } from 'react'
-import { useAuth } from '../../../context/Auth/AuthContext'
-import { Link, useParams } from 'react-router-dom'
-import { CardSkeleton } from '../../../components/admin/CardSkeleton'
+  Input,
+} from "@material-tailwind/react";
+import { useEffect } from "react";
+import { useAuth } from "../../../context/Auth/AuthContext";
+import { Link, useParams } from "react-router-dom";
+import { CardSkeleton } from "../../../components/admin/CardSkeleton";
 const ShowUser = () => {
-  const { getUserById, userById, loading } = useAuth()
-  const { userId } = useParams()
+  const { getUserById, userById, loading } = useAuth();
+  const { userId } = useParams();
   const { image, firstName, lastName, email, gender, city, phone, role } =
-    userById
+    userById;
 
   useEffect(() => {
-    getUserById(userId)
-  }, [userId])
+    getUserById(userId);
+  }, [userId]);
   return (
-    <div className='flex justify-center items-center h-[90vh]'>
+    <div className="pb-1">
       {loading ? (
-        <div className='h-[90vh] flex justify-center items-center'>
+        <div className="h-[90vh] flex justify-center items-center">
           <CardSkeleton />
         </div>
       ) : (
-        <Card className='w-1/3 bg-[#16423C] text-white'>
-          <CardBody className='flex flex-col gap-4 '>
-            <div className='flex justify-center items-center gap-2'>
-              <Avatar
-                src={image || 'https://placehold.co/600x400?text=user image'}
-                alt='avatar'
-                variant='rounded'
-                size='xl'
+        <div className="flex flex-col gap-6 w-1/2 h-[90vh] py-10 px-16 ">
+          <div className="flex flex-col gap-4">
+            <span>User Image</span>
+            <img
+              src={image || "https://placehold.co/600x400?text=user image"}
+              className="w-32 h-32 object-contain shadow-md"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span>User Name</span>
+            <Input
+              size="md"
+              disabled
+              value={`${firstName?.slice(0, 10) || ""} ${
+                lastName?.slice(0, 10) || ""
+              }`}
+              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              labelProps={{
+                className: "before:content-none after:content-none",
+              }}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span>User E-Mail</span>
+            <Input
+              size="md"
+              disabled
+              value={email || "NA"}
+              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              labelProps={{
+                className: "before:content-none after:content-none",
+              }}
+            />
+          </div>
+          <div className="flex gap-8">
+            <div className="flex flex-col gap-2">
+              <span>User Gender</span>
+              <Input
+                size="md"
+                disabled
+                value={gender || "NA"}
+                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
               />
-
-              <Typography variant='h3' color='amber' className='mb-2'>
-                {`${firstName?.slice(0, 10) || ''} ${
-                  lastName?.slice(0, 10) || ''
-                }`}
-              </Typography>
             </div>
-            <div className='flex items-center '>
-              <Typography variant='h4' className='flex-1'>
-                Email is :
-              </Typography>
-              <span className='text-blue-gray-300 text-xl flex-1'>
-                {email || 'NA'}
-              </span>
+            <div className="flex flex-col gap-2">
+              <span>User City</span>
+              <Input
+                size="md"
+                disabled
+                value={city || "NA"}
+                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
             </div>
-            <div className='flex items-center '>
-              <Typography variant='h4' className='flex-1'>
-                Gender is :
-              </Typography>
-              <span className='text-blue-gray-300 text-xl flex-1'>
-                {gender || 'NA'}
-              </span>
+          </div>
+          <div className="flex gap-8">
+            <div className="flex flex-col gap-2">
+              <span>User Phone</span>
+              <Input
+                size="md"
+                disabled
+                value={phone || "NA"}
+                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
             </div>
-            <div className='flex items-center '>
-              <Typography variant='h4' className='flex-1'>
-                City is :
-              </Typography>
-              <span className='text-blue-gray-300 text-xl flex-1'>
-                {city || 'NA'}
-              </span>
+            <div className="flex flex-col gap-2">
+              <span>User Role</span>
+              <Input
+                size="md"
+                disabled
+                value={role || "NA"}
+                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
             </div>
-            <div className='flex items-center'>
-              <Typography variant='h4' className='flex-1'>
-                Phone is :
-              </Typography>
-              <span className='text-blue-gray-300 text-xl flex-1'>
-                {phone || 'NA'}
-              </span>
-            </div>
-            <div className='flex items-center '>
-              <Typography variant='h4' className='flex-1'>
-                Role is :
-              </Typography>
-              <span className='text-blue-gray-300 text-xl flex-1'>
-                {role || 'NA'}
-              </span>
-            </div>
-          </CardBody>
-          <CardFooter className='pt-0'>
-            <Link to={`/admin/users/edit/${userId}`}>
-              <Button
-                fullWidth
-                color='blue'
-                className='text-md text-blue-gray-900'
-              >
-                Edit User
-              </Button>
-            </Link>
-          </CardFooter>
-        </Card>
+          </div>
+          <Link to={`/admin/users/edit/${userId}`}>
+            <Button size="md" className="text-xs bg-black rounded-sm">
+              Edit User
+            </Button>
+          </Link>
+        </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ShowUser
+export default ShowUser;

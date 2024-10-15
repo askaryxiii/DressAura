@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Navbar, IconButton, Collapse } from "@material-tailwind/react";
 import NavList from "./NavList";
 import { Link } from "react-router-dom";
-import logo from "../../../public/img/logo(3).png";
+import logo from "../../../public/img/logo.png";
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false);
