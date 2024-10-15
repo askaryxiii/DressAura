@@ -7,6 +7,7 @@ import contactUs from "../../../public/img/ContactUs.jpg"
 const ContactUs = () => {
   return (
     <section className="px-8 py-8 lg:py-16  mb-5">
+      {/* the top Side */}
     <div className="container mx-auto text-center">
       <Typography
         variant="h5"
@@ -27,12 +28,14 @@ const ContactUs = () => {
         technical assistance, or suggestions for improvement, our team is
         eager to hear from you.
       </Typography>
+      {/* the left Side image */}
       <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start ">
         <img
           src={contactUs}
           alt="contact us"
           className="w-full h-full lg:max-h-[510px]"
         />
+        {/* Form */}
         <form
           action="#"
           className="flex flex-col gap-4 lg:max-w-sm ml-4"

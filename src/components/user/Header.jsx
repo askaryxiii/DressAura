@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Navbar, IconButton, Collapse } from "@material-tailwind/react";
 import NavList from "./NavList";
 import { Link } from "react-router-dom";
-import logo from "../../../public/img/logo.png";
+import logo from "../../../src/image/exlogo.png";
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -15,12 +15,12 @@ const Header = () => {
   }, []);
 
   return (
-    <Navbar className="sticky top-0 z-50  max-w-full rounded-none  py-1 lg:px-8  border-none">
-      <div className=" flex items-center justify-between text-black font-bold text-xl px-4 ">
+    <Navbar className="sticky top-0 z-50  max-w-full rounded-none  py-1 lg:px-8  border-none bg-white">
+      <div className=" flex items-center justify-between text-black font-bold text-xl px-3 ">
         {/* logo */}
         <div className="flex justify-center">
           <Link to="/" className="mr-4 cursor-pointer ">
-            <img className=" w-44 object-cover object-center " src={logo} />
+            <img className=" w-36 object-cover object-center  " src={logo} />
           </Link>
         </div>
         {/* other nav items  */}

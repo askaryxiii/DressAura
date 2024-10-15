@@ -1,5 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-import logo from "../../../public/img/logo.png";
+import logo from "../../../src/image/exlogo.png";
 import { Link } from "react-router-dom";
 
 const LINKS = [
@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className="relatve w-full mb-0 px-4 flex text-center border-t-2 flex-col">
       <div className="flex flex-wrap items-center  md:justify-around py-4">
         {/* Logo */}
-        <div className="w-56 mx-auto">
+        <div className="w-44 mx-auto">
           <img className=" w-full object-cover object-center " src={logo} />
         </div>
 

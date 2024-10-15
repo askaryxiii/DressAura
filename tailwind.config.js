@@ -13,10 +13,8 @@ module.exports = withMT({
   theme: {
     extend: {
       backgroundImage: {
-        'hero-1': "url('./public/img/hero/banner.png')",
-        'bgLogIn': "url('./public/img/SignIn.jpg')",
-        'bgSignUp': "url('./public/img/signup.jpg')",
-  
+        'bgLogIn': "url('./src/image/SignIn.jpg')",
+        'bgSignUp': "url('./src/image/signup.jpg')",
       },
     },
   },

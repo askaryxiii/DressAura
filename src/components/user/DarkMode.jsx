@@ -1,94 +1,93 @@
-import { useAuth } from '../../context/Auth/AuthContext'
+import { useAuth } from "../../context/Auth/AuthContext";
 
 const DarkMode = () => {
-  const { theme, setTheme } = useAuth()
+  const { theme, setTheme } = useAuth();
   const setDarkTheme = () => {
     // document.documentElement.classList.add('dark')
-    setTheme('dark')
-    localStorage.theme = 'dark'
-  }
+    setTheme("dark");
+    localStorage.theme = "dark";
+  };
 
   const setLightTheme = () => {
     // document.documentElement.classList.remove('dark')
-    setTheme('light')
-    localStorage.theme = 'light'
-  }
-  const onThemeSwitcherItemClick = event => {
-    const theme = event.target.dataset.theme
+    setTheme("light");
+    localStorage.theme = "light";
+  };
+  const onThemeSwitcherItemClick = (event) => {
+    const theme = event.target.dataset.theme;
 
-    if (theme === 'system') {
-      localStorage.removeItem('theme')
+    if (theme === "system") {
+      localStorage.removeItem("theme");
       //   setSystemTheme()
-    } else if (theme === 'dark') {
-      setDarkTheme()
+    } else if (theme === "dark") {
+      setDarkTheme();
     } else {
-      setLightTheme()
+      setLightTheme();
     }
-  }
+  };
 
   return (
     <div>
       <div>
-        {theme === 'dark' ? (
+        {theme === "dark" ? (
           <a
-            id='theme-switcher'
-            className='block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700  active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100  rounded border'
-            href='#'
-            data-theme='light'
-            onClick={e => onThemeSwitcherItemClick(e)}
+            id="theme-switcher"
+            className="block w-full  border-none whitespace-nowrap bg-transparent hover:-translate-y-0.5 px-3 py-2  font-normal text-gray-700  active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-900 border "
+            href="#"
+            data-theme="light"
+            onClick={(e) => onThemeSwitcherItemClick(e)}
           >
-            <div className='pointer-events-none'>
+            <div className="pointer-events-none">
               <div
-                className='inline-block w-[24px] text-center'
-                data-theme-icon='light'
+                className="inline-block w-[24px] text-center "
+                data-theme-icon="light"
               >
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  className='inline-block h-6 w-6'
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="inline-block h-7 w-7"
+                  
                 >
-                  <path d='M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z' />
+                  <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                 </svg>
               </div>
-             
             </div>
           </a>
         ) : (
           <a
-            id='theme-switcher'
-            className='block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 hover:bg-gray-100  active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 '
-            href='#'
-            data-theme='dark'
+            id="theme-switcher"
+            className="  block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-900 hover:-translate-y-0.5 active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 "
+            href="#"
+            data-theme="dark"
             data-twe-dropdown-item-ref
-            onClick={e => onThemeSwitcherItemClick(e)}
+            onClick={(e) => onThemeSwitcherItemClick(e)}
           >
-            <div className='pointer-events-none '>
+            <div className="pointer-events-none ">
               <div
-                className='inline-block w-[24px] text-center '
-                data-theme-icon='dark'
+                className="inline-block w-[24px] text-center "
+                data-theme-icon="dark"
               >
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  className='inline-block h-6 w-10 rounded-lg mt-2'
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="inline-block h-6 w-10 rounded-lg mt-2"
                   color="black"
                 >
                   <path
-                    fillRule='evenodd'
-                    d='M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z'
-                    clipRule='evenodd'
+                    fillRule="evenodd"
+                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                    clipRule="evenodd"
                   />
                 </svg>
               </div>
-          
             </div>
           </a>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DarkMode
+export default DarkMode;
