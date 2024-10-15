@@ -1,27 +1,42 @@
-import { Card, Typography, Button, Avatar } from '@material-tailwind/react'
-import { useProducts } from '../../../context/Products/ProductsContext'
-import { Link } from 'react-router-dom'
-import BounceLoader from 'react-spinners/BounceLoader'
-
-import { useEffect } from 'react'
-
-const TABLE_HEAD = ['Product', 'Price', 'Operations']
+import { Card, Typography, Button, Avatar } from "@material-tailwind/react";
+import { useProducts } from "../../../context/Products/ProductsContext";
+import { Link } from "react-router-dom";
+import BounceLoader from "react-spinners/BounceLoader";
+import { useEffect } from "react";
+import ProductTable from "../../../components/admin/productsDashboard/ProductTable";
 
 const ProductDashboard = () => {
   const { products, getAllProducts, deleteProduct, productInfoLoading } =
-    useProducts()
+    useProducts();
 
   useEffect(() => {
-    getAllProducts()
-  }, [])
+    getAllProducts();
+  }, []);
   return (
     <>
       {productInfoLoading ? (
-        <div className='h-[90vh] flex items-center justify-center '>
-          <BounceLoader color='#2d5335' />
+        <div className="h-[90vh] flex items-center justify-center ">
+          <BounceLoader color="#2d5335" />
         </div>
       ) : (
-        <div className='w-full flex flex-col  gap-4 '>
+        <div className="w-full flex flex-col gap-6 lg:px-10 px-2 py-10 flex-nowrap">
+          <Typography variant="h2">Products</Typography>
+          <Link className="w-fit" to={"/admin/products/add"}>
+            <Button className="w-fit shadow-none hover:shadow-none bg-black rounded-sm">
+              Add a new products
+            </Button>
+          </Link>
+          <ProductTable />
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ProductDashboard;
+
+{
+  /* <div className='w-full flex flex-col gap-4 px-5'>
           <h1 className='text-center text-4xl text-gray-900 dark:text-gray-200 font-bold mt-4'>
             Products
           </h1>
@@ -97,10 +112,5 @@ const ProductDashboard = () => {
               </table>
             </Card>
           </section>
-        </div>
-      )}
-    </>
-  )
+        </div> */
 }
-
-export default ProductDashboard
