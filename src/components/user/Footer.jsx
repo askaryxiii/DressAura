@@ -16,7 +16,7 @@ const LINKS = [
     to: "/About",
   },
   {
-    items: ["Contact Us"],
+    items: ["Contact"],
     to: "/ContactUS",
   },
 ];
@@ -25,17 +25,17 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="relatve w-full mb-0 px-4 flex text-center border-t-2 flex-col dark:bg-[#d2d2d2]">
-      <div className="flex flex-wrap items-center  md:justify-around py-4">
+    <footer className="w-full mb-0  flex text-center border-t-2 flex-col dark:bg-[#d2d2d2]">
+      <div className="flex flex-wrap items-center py-4 md:justify-around">
         {/* Logo */}
-        <div className="w-44 mx-auto">
+        <div className="w-44 ml-10">
           <img className=" w-full object-cover object-center "
            src={logo} 
            />
         </div>
 
         {/* lists */}
-        <div className="flex  justify-between gap-16 mx-auto ">
+        <div className="flex  justify-center mx-auto gap-7 md:mr-10">
           {LINKS?.map(({ items, to }, index) => (
             <ul key={index}>
               {items?.map((link, secIndex) => (

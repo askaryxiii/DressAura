@@ -79,8 +79,8 @@ const SignUp = () => {
             <h3 className="text-center text-red-900">{errorMsg}</h3>
           </div>
           {/* first name && last name  */}
-          <div className="flex flex-col lg:flex-row justify-evenly gap-2 w-full">
-            <div className="w-1/2 ">
+          <div className="flex flex-col lg:flex-row justify-evenly gap-2 ">
+            <div  className="w-full">
               <Input
                 label="FirstName"
                 value={userInfo?.firstName}
@@ -92,7 +92,7 @@ const SignUp = () => {
               />
               <HelperText text="* user name must be 3 characters at least" />
             </div>
-            <div className="w-1/2 ">
+            <div   className="w-full">
               <Input
                 label="LastName"
                 value={userInfo?.lastName}

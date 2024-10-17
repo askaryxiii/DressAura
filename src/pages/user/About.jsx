@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-tailwind/react";
-import vedio from "../../../public/vedio/3255323-uhd_3840_2160_25fps.mp4";
+import vedio from "../../../public/vedio/6774633-uhd_3840_2160_30fps.mp4";
 
 const About = () => {
   return (
@@ -18,10 +18,10 @@ const About = () => {
           variant="h2"
           color="blue-gray"
           className="my-4 font-black text-4xl !leading-snug">
-          Discover Fashion for the Whole Family...
+        Your Trusted Online Store for Fashion, Electronics, and More...
         </Typography>
         <Typography clhop NameassName="font-normal !text-gray-500">
-          At SAMM, we believe fashion is for everyone. That's why we offer an
+          At DressAura, we believe fashion is for everyone. That's why we offer an
           extensive range of stylish and affordable clothing for women, men, and
           kids. From chic women's dresses, versatile men's casual and formal
           wear, to fun and comfortable outfits for kids, we have something for
@@ -37,7 +37,7 @@ const About = () => {
           the perfect fit.
           <br />
           <br />
-          Beyond great products, SAMM is dedicated to delivering an exceptional
+          Beyond great products, DressAura is dedicated to delivering an exceptional
           shopping experience. Our user-friendly app allows you to browse and
           shop easily, with secure payment options and fast delivery right to
           your doorstep. Plus, our customer service team is always available to
