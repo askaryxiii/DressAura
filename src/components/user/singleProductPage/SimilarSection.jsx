@@ -8,8 +8,8 @@ const SimilarSection = () => {
   const { similar } = useProducts();
 
   return (
-    <div className="flex flex-col w-full items-center">
-      <span className="text-3xl w-3/4 text-gray-800 dark:text-white font-light sm:col-span-1 md:col-span-2 lg:col-span-3">
+    <div className="flex flex-col w-full ">
+      <span className="text-3xl w-3/4 text-gray-800  font-light sm:col-span-1 md:col-span-2 lg:col-span-3 pb-14 flex justify-center">
         Similar <span className="font-medium">Products ─── </span>
       </span>
       <Swiper
