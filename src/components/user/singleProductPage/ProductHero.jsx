@@ -12,11 +12,13 @@ const ProductHero = ({ id, product }) => {
     inactiveFillColor: "#bcc4cd",
   };
   return (
-    <div className="flex lg:flex-row flex-col justify-center gap-16 lg:px-36 py-20">
-      <div className="">
-        <img src={product?.image} className="h-96 w-full" />
+    <div className="flex lg:flex-row flex-col justify-around gap-7 lg:px-36 py-20 items-center">
+      {/* Image */}
+      <div className="max-w-96 flex justify-center">
+        <img src={product?.image} className="h-96" />
       </div>
-      <div className="flex flex-col w-1/2 gap-4">
+      {/* details of product */}
+      <div className="flex flex-col  gap-2 w-2/5 ">
         <div className="flex flex-col gap-1">
           <span className="text-xl font-medium">{product?.title}</span>
           <div className="flex gap-2 items-center">
@@ -33,7 +35,7 @@ const ProductHero = ({ id, product }) => {
         </div>
         <div className="flex flex-col gap-1">
           <span className="text-2xl font-medium"> ${product?.price} </span>
-          <span className="text-sm text-gray-600">{product?.description}</span>
+          <span className="text-sm text-gray-600 text-balance">{product?.description}</span>
         </div>
         <div className="flex flex-col gap-3">
           <Button
