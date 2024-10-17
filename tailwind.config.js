@@ -15,6 +15,7 @@ module.exports = withMT({
       backgroundImage: {
         'bgLogIn': "url('./src/image/SignIn.jpg')",
         'bgSignUp': "url('./src/image/signup.jpg')",
+  
       },
     },
   },
