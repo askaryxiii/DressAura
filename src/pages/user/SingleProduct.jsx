@@ -33,7 +33,7 @@ export const SingleProduct = () => {
           <ClimbingBoxLoader color="#303b53" size={26} />
         </div>
       ) : (
-        <div className="flex flex-col gap-10 pb-16 bg-[#fcfcfc] ">
+        <div className="flex flex-col gap-10 pb-16 bg-[#fcfcfc] dark:bg-gray-900">
           <ProductHero id={id} product={product} />
           <SimilarSection />
         </div>

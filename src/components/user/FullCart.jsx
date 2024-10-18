@@ -15,7 +15,7 @@ const FullCart = ({ productId, title, image, price, quantity, stock }) => {
   const isLoading = cartLoading[productId] || {};
 
   return (
-    <div className="flex justify-between items-center py-3 mt-0 border-t">
+    <div className="lg:flex md:flex justify-between items-center py-3 mt-0 border-t">
       <div className="flex  items-center flex-grow">
         <img src={image} className=" w-20 h-24 object-contain" />
 
@@ -29,13 +29,13 @@ const FullCart = ({ productId, title, image, price, quantity, stock }) => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
-        <div className="pr-8 flex gap-4 justify-center items-center">
+      <div className="flex flex-row lg:gap-0 gap-2 lg:justify-center md:justify-center justify-between items-center">
+        <div className="lg:pr-8 flex gap-4 justify-center items-center">
           <Button
             size="sm"
             disabled={quantity == 1 || isLoading.update}
             onClick={() => handleQuantity(productId, quantity - 1)}
-            className="font-medium text-base shadow-none hover:shadow-none bg-transparent text-black ">
+            className="font-medium text-base shadow-none hover:shadow-none bg-transparent text-black dark:text-white ">
             {isLoading.update ? <Spinner className="h-4 w-4" /> : "-"}
           </Button>
           <span className="text-lg font-semibold px-3 border-r-2 border-l-2 border-gray-400">
@@ -45,28 +45,28 @@ const FullCart = ({ productId, title, image, price, quantity, stock }) => {
             size="sm"
             onClick={() => handleQuantity(productId, quantity + 1)}
             disabled={quantity >= stock || isLoading.update}
-            className="text-base font-medium shadow-none hover:shadow-none bg-transparent text-black">
+            className="text-base font-medium shadow-none hover:shadow-none bg-transparent text-black dark:text-white">
             {isLoading.update ? <Spinner className="h-4 w-4" /> : "+"}
           </Button>
         </div>
 
-        <div className="pr-8">
+        <div className="lg:pr-8 ">
           <span className="text-base font-medium">$ {price}</span>
         </div>
         <div>
           <i className="fa fa-close text-xs font-medium"></i>
         </div>
+        <Button
+          className="bg-transparent text-black shadow-none border-none hover:shadow-none p-0"
+          onClick={() => removeItemHandler(productId)}
+          disabled={isLoading.delete}>
+          {isLoading.delete ? (
+            <Spinner />
+          ) : (
+            <IoClose className="text-xl text-gray-700 dark:text-white" />
+          )}
+        </Button>
       </div>
-      <Button
-        className="bg-transparent text-black shadow-none border-none hover:shadow-none "
-        onClick={() => removeItemHandler(productId)}
-        disabled={isLoading.delete}>
-        {isLoading.delete ? (
-          <Spinner />
-        ) : (
-          <IoClose className="text-xl text-gray-700" />
-        )}
-      </Button>
     </div>
   );
 };

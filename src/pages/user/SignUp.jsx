@@ -80,7 +80,7 @@ const SignUp = () => {
           </div>
           {/* first name && last name  */}
           <div className="flex flex-col lg:flex-row justify-evenly gap-2 ">
-            <div  className="w-full">
+            <div className="w-full">
               <Input
                 label="FirstName"
                 value={userInfo?.firstName}
@@ -92,7 +92,7 @@ const SignUp = () => {
               />
               <HelperText text="* user name must be 3 characters at least" />
             </div>
-            <div   className="w-full">
+            <div className="w-full">
               <Input
                 label="LastName"
                 value={userInfo?.lastName}
@@ -187,7 +187,7 @@ const SignUp = () => {
           />
           {/* button Sign Up */}
           <Button
-            className="mt-2 text-md font-normal bg-gray-900 hover:bg-black transition-all py-2  mx-auto"
+            className="mt-2 text-md font-normal bg-gray-900 hover:bg-black transition-all py-2 flex justify-center items-center mx-auto"
             fullWidth
             type="submit"
             disabled={loading}>
@@ -199,7 +199,7 @@ const SignUp = () => {
             Already have an account?
             <Link
               to={"/login"}
-              className="font-medium text-gray-700   hover:text-black text-md ml-2 transition-all">
+              className="font-medium text-gray-700 hover:text-black text-md ml-2 transition-all">
               Sign In
             </Link>
           </Typography>
