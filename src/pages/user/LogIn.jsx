@@ -69,8 +69,7 @@ const LogIn = () => {
     <div className=" bg-bgLogIn bg-cover bg-center flex justify-center">
       <Card
         shadow={false}
-        className="flex items-center my-16 py-10 text-black dark:text-black px-5  dark:bg-gray-200"
-      >
+        className="flex items-center my-16 py-10 text-black dark:text-black px-5  dark:bg-gray-200">
         <Typography variant="h4" className="pb-2">
           Sign In
         </Typography>
@@ -79,8 +78,7 @@ const LogIn = () => {
         </Typography>
         <form
           className="mt-8 mb-6  sm:w-96 text-center px-4"
-          onSubmit={submitHandler}
-        >
+          onSubmit={submitHandler}>
           <div>
             <h3 className="text-center text-red-900">{errorMsg}</h3>
           </div>
@@ -123,20 +121,18 @@ const LogIn = () => {
               )}
             </div>
           </div>
-      
+
           <Button
-            className="mt-4 text-sm font-normal py-2.5 w-full bg-gray-900 hover:bg-black"
+            className="mt-4 text-sm font-normal py-2.5 w-full bg-gray-900 hover:bg-black flex justify-center items-center"
             type="submit"
-            disabled={loading}
-          >
+            disabled={loading}>
             {loading ? <Spinner color="amber" /> : "Sign In"}
           </Button>
           <Link to={"/signup"}>
             <Button
-              className="mt-4 text-sm font-normal border border-black py-2 w-full hover:bg-indigo-50"
+              className="mt-4 text-sm font-normal border border-gray-300 py-2 w-full hover:bg-indigo-50"
               type="submit"
-              color={"white"}
-            >
+              color={"white"}>
               Sign Up
             </Button>
           </Link>

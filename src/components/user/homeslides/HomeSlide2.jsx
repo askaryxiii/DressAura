@@ -12,7 +12,7 @@ const HomeSlide2 = () => {
 
     <div className="flex flex-col justify-center items-center gap-2 py-20 dark:bg-gray-900">
       <div className="flex flex-col items-center gap-4 w-1/2">
-        <span className="text-5xl text-gray-800 dark:text-white  font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
+        <span className="lg:text-5xl md:text-5xl text-3xl text-gray-800 dark:text-white  font-light lg:text-start text-center sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
           All <span className="font-medium">Collections ─── </span>
         </span>
         <span className="text-center">

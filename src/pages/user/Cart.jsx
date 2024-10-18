@@ -52,12 +52,12 @@ const Cart = () => {
             <div className="flex justify-between">
               <Link
                 to={"/products"}
-                className="flex text-sm text-gray-800 p-0 items-center mt-3 gap-2">
+                className="flex text-sm text-gray-800 dark:text-white p-0 items-center mt-3 gap-2">
                 <CgArrowLongLeft className="text-xl" />
                 <span>Back to Shop</span>
               </Link>
               <Link
-                className="text-sm text-gray-800 p-0 items-center mt-3 "
+                className="text-sm text-gray-800 dark:text-white p-0 items-center mt-3 "
                 onClick={() => {
                   clearCartHandler();
                 }}
