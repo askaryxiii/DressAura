@@ -27,7 +27,7 @@ const ShowUser = () => {
           <CardSkeleton />
         </div>
       ) : (
-        <div className="flex flex-col gap-6 w-1/2 h-[90vh] py-10 px-16 ">
+        <div className="flex flex-col gap-6 w-1/2 min-h-[90vh] py-10 px-16 ">
           <div className="flex flex-col gap-4">
             <span>User Image</span>
             <img
@@ -43,7 +43,7 @@ const ShowUser = () => {
               value={`${firstName?.slice(0, 10) || ""} ${
                 lastName?.slice(0, 10) || ""
               }`}
-              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -55,7 +55,7 @@ const ShowUser = () => {
               size="md"
               disabled
               value={email || "NA"}
-              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -68,7 +68,7 @@ const ShowUser = () => {
                 size="md"
                 disabled
                 value={gender || "NA"}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -80,7 +80,7 @@ const ShowUser = () => {
                 size="md"
                 disabled
                 value={city || "NA"}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -94,7 +94,7 @@ const ShowUser = () => {
                 size="md"
                 disabled
                 value={phone || "NA"}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -106,7 +106,7 @@ const ShowUser = () => {
                 size="md"
                 disabled
                 value={role || "NA"}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}

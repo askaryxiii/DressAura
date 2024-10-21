@@ -7,18 +7,19 @@ const TABLE_HEAD = ["Product", "Price", "Operations"];
 const ProductTable = () => {
   const { products, deleteProduct } = useProducts();
   return (
-    <Card className="h-full">
-      <table className="lg:w-full lg:min-w-max table-auto text-center">
+    <Card className="h-full dark:bg-gray-700 ">
+      <table className="lg:w-full table-auto text-center ">
         <thead>
-          <tr>
+          <tr className="justify-between lg:w-full w-fit">
             {TABLE_HEAD.map((head) => (
               <th
                 key={head}
-                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                className="border-b border-blue-gray-100 bg-blue-gray-50 dark:bg-gray-800 p-4"
+              >
                 <Typography
                   variant="small"
-                  color="blue-gray"
-                  className="font-normal leading-none opacity-70 flex">
+                  className="font-normal leading-none opacity-70 dark:opacity-100 dark:text-white flex"
+                >
                   {head}
                 </Typography>
               </th>
@@ -31,10 +32,7 @@ const ProductTable = () => {
               <td className="p-4 border-b border-blue-gray-50">
                 <div className="flex gap-3 items-center">
                   <Avatar src={image} alt="avatar" size="sm" />
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal">
+                  <Typography variant="small" className="font-normal dark:text-white">
                     {title}
                   </Typography>
                 </div>
@@ -42,8 +40,9 @@ const ProductTable = () => {
               <td className="p-4 border-b border-blue-gray-50">
                 <Typography
                   variant="small"
-                  color="blue-gray"
-                  className="font-normal">
+              
+                  className="font-normal dark:text-white"
+                >
                   ${price}
                 </Typography>
               </td>
@@ -52,14 +51,16 @@ const ProductTable = () => {
                   <Link to={`/admin/products/${_id}`}>
                     <Button
                       size="sm"
-                      className="hover:shadow-none shadow-none ">
+                      className="hover:shadow-none shadow-none "
+                    >
                       View
                     </Button>
                   </Link>
                   <Link to={`/admin/products/edit/${_id}`}>
                     <Button
                       size="sm"
-                      className="hover:shadow-none shadow-none ">
+                      className="hover:shadow-none shadow-none "
+                    >
                       Edit
                     </Button>
                   </Link>
@@ -68,7 +69,8 @@ const ProductTable = () => {
                       size="sm"
                       color="red"
                       className="hover:shadow-none shadow-none "
-                      onClick={() => deleteProduct(image, _id)}>
+                      onClick={() => deleteProduct(image, _id)}
+                    >
                       Delete
                     </Button>
                   </Link>

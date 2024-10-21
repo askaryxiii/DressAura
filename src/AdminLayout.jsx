@@ -14,7 +14,7 @@ import AddUser from "./pages/admin/userSection/AddUser";
 
 const AdminLayout = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 dark:bg-gray-900">
       <AdminHeader />
       <AdminSideBar />
       <div className="lg:ml-[16.7%]">

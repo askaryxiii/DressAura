@@ -25,7 +25,7 @@ const ShowProduct = () => {
           <CardSkeleton />
         </div>
       ) : (
-        <div className="flex flex-col gap-6 w-1/2 h-[90vh] py-10 px-16 ">
+        <div className="flex flex-col gap-6 w-1/2 min-h-[90vh] py-10 px-16 ">
           <div className="flex flex-col gap-4">
             <span>Product Image</span>
             <img
@@ -39,7 +39,7 @@ const ShowProduct = () => {
               size="md"
               disabled
               value={product?.title}
-              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -50,7 +50,7 @@ const ShowProduct = () => {
             <Textarea
               disabled
               value={product?.description}
-              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -63,7 +63,7 @@ const ShowProduct = () => {
                 size="md"
                 disabled
                 value={product?.category || "Generic"}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -75,7 +75,7 @@ const ShowProduct = () => {
                 size="md"
                 disabled
                 value={`$${product?.price}`}
-                className=" !border-t-blue-gray-200 rounded-sm w-full focus:!border-gray-700"
+                className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm w-full focus:!border-gray-700"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}

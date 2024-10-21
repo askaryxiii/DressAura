@@ -42,13 +42,13 @@ const EditUser = () => {
     navigate(`/admin/users/${userId}`);
   };
   return (
-    <div className="flex flex-col gap-6 w-1/2 h-[90vh] py-10 px-16 ">
+    <div className="flex flex-col gap-6 w-1/2 min-h-[90vh] py-10 px-16 ">
       <Typography variant="h4">Edit Product</Typography>
       <form onSubmit={submitHandler} className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
           <span>User Image</span>
           <Input
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -67,7 +67,7 @@ const EditUser = () => {
             onChange={(e) =>
               setUserInfo((prev) => ({ ...prev, firstName: e.target.value }))
             }
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -81,7 +81,7 @@ const EditUser = () => {
             onChange={(e) =>
               setUserInfo((prev) => ({ ...prev, lastName: e.target.value }))
             }
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -95,7 +95,7 @@ const EditUser = () => {
             onChange={(e) =>
               setUserInfo((prev) => ({ ...prev, email: e.target.value }))
             }
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}

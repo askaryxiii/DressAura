@@ -8,18 +8,19 @@ const UserTable = () => {
   const { getAllUsers, allUsersInfo, changeUserRole, deleteUserById } =
     useAuth();
   return (
-    <Card className="h-full w-full mb-10">
-      <table className=" lg:w-full lg:min-w-max table-auto text-center">
+    <Card className="h-full mb-10 dark:bg-gray-700 ">
+      <table className=" lg:w-full table-auto text-center">
         <thead>
           <tr className="justify-between lg:w-full w-fit">
             {TABLE_HEAD.map((head) => (
               <th
                 key={head}
-                className="border-b w-fit border-blue-gray-100 bg-blue-gray-50 p-4 ">
+                className="border-b border-blue-gray-100 bg-blue-gray-50 dark:bg-gray-800  p-4 "
+              >
                 <Typography
                   variant="small"
-                  color="blue-gray"
-                  className="font-normal w-fit leading-none opacity-70">
+                  className="font-normal leading-none opacity-70 dark:opacity-100 dark:text-white"
+                >
                   {head || ""}
                 </Typography>
               </th>
@@ -34,8 +35,8 @@ const UserTable = () => {
                   <div className="flex w-fit gap-3 items-center justify-center">
                     <Typography
                       variant="small"
-                      color="blue-gray"
-                      className="font-normal w-fit">
+                      className="font-normal w-fit dark:text-white "
+                    >
                       {firstName}
                     </Typography>
                   </div>
@@ -43,8 +44,8 @@ const UserTable = () => {
                 <td className="p-4 border-b border-blue-gray-50">
                   <Typography
                     variant="small"
-                    color="blue-gray"
-                    className="font-normal">
+                    className="font-normal dark:text-white "
+                  >
                     {role || ""}
                   </Typography>
                 </td>
@@ -53,14 +54,16 @@ const UserTable = () => {
                     <Link to={`/admin/users/${_id}`}>
                       <Button
                         size="sm"
-                        className="hover:shadow-none shadow-none ">
+                        className="hover:shadow-none shadow-none "
+                      >
                         View
                       </Button>
                     </Link>
                     <Link to={`/admin/users/edit/${_id}`}>
                       <Button
                         size="sm"
-                        className="hover:shadow-none shadow-none ">
+                        className="hover:shadow-none shadow-none "
+                      >
                         Edit
                       </Button>
                     </Link>
@@ -73,7 +76,8 @@ const UserTable = () => {
                           email == "heshamkhalil1988@gmail.com"
                         }
                         color="red"
-                        onClick={() => deleteUserById(image, _id)}>
+                        onClick={() => deleteUserById(image, _id)}
+                      >
                         Delete
                       </Button>
                     </Link>
@@ -86,7 +90,8 @@ const UserTable = () => {
                         disabled={
                           email == "mohamed@mohamed.com" ||
                           email == "heshamkhalil1988@gmail.com"
-                        }>
+                        }
+                      >
                         {role == "admin" ? "Remove Admin" : "Make Admin"}
                       </Button>
                     </Link>
