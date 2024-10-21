@@ -51,7 +51,7 @@ const EditProduct = () => {
         <div className="flex flex-col gap-4">
           <span>Product Image</span>
           <Input
-            className=" !border-t-blue-gray-200 dark:text-white dark:text-white  rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
