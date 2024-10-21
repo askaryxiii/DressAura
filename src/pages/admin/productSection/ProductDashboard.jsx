@@ -22,7 +22,7 @@ const ProductDashboard = () => {
         <div className="w-full flex flex-col gap-6 lg:px-10 px-2 py-10 flex-nowrap">
           <Typography variant="h2">Products</Typography>
           <Link className="w-fit" to={"/admin/products/add"}>
-            <Button className="w-fit shadow-none hover:shadow-none bg-black rounded-sm">
+            <Button className="w-fit shadow-none dark:outline dark:outline-1 dark:border-white hover:shadow-none bg-black rounded-sm">
               Add a new products
             </Button>
           </Link>

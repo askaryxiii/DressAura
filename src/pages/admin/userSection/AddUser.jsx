@@ -54,13 +54,13 @@ const AddUser = () => {
   };
   return (
     <div className="flex flex-col gap-6 w-1/2 min-h-[90vh] py-10 px-16 ">
-      <Typography variant="h4">Edit Product</Typography>
+      <Typography variant="h4">Add User</Typography>
       <form onSubmit={submitHandler} className="flex flex-col gap-2">
         <div className="flex flex-col gap-4">
           <span>User Image</span>
           <Input
             disabled
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -79,7 +79,7 @@ const AddUser = () => {
             onChange={(e) =>
               setNewUser((prev) => ({ ...prev, firstName: e.target.value }))
             }
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -95,7 +95,7 @@ const AddUser = () => {
               setNewUser((prev) => ({ ...prev, lastName: e.target.value }))
             }
             error={err?.errLastName}
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -110,7 +110,7 @@ const AddUser = () => {
               setNewUser((prev) => ({ ...prev, email: e.target.value }))
             }
             error={err?.errEmail}
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -126,7 +126,7 @@ const AddUser = () => {
             }
             error={err?.errPassword}
             type="password"
-            className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+            className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -159,7 +159,7 @@ const AddUser = () => {
               onChange={(e) =>
                 setNewUser((prev) => ({ ...prev, phone: e.target.value }))
               }
-              className=" !border-t-blue-gray-200 rounded-sm focus:!border-gray-700"
+              className=" !border-t-blue-gray-200 disabled:bg-white dark:disabled:bg-gray-800 dark:text-white rounded-sm focus:!border-gray-700"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
